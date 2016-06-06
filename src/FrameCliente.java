@@ -26,7 +26,7 @@ public class FrameCliente extends JFrame implements ActionListener {
 	private JTextArea textAreaLista;
     
 	public FrameCliente() {
-		setSize(800, 600);
+		setSize(780, 680);
         setLayout(null);
         setVisible(true);
 
