@@ -1,7 +1,8 @@
 /App.class
 /Cliente.class
 /FrameCliente.class
-/FrameProduto.class
-/FrameVenda.class
-/Produto.class
-/Venda.class
+/Login.class
+/TelaCadastro.class
+/TelaLog.class
+/TelaLogin.class
+/Usuario.class
