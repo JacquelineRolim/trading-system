@@ -47,7 +47,6 @@ public class Produto {
 		this.quant = quant;
 	}
 	
-	//METODOS
 	public void cadastrarProduto(Produto produto){
 		listaProdutos.add(produto);
 	}
