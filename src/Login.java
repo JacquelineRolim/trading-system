@@ -1,89 +1,103 @@
-//import javax.swing.JButton;
-//import javax.swing.JFrame;
-//import javax.swing.JLabel;
-//import javax.swing.JTextField;
-//
-//public class Login {
-//
-//	public static void main(String[] args) {
-//		// TODO Auto-generated method stub
-//		
-//		public class TelaCadastroCantor extends JFrame {
-//		private static final long serialVersionUID = 1L;
-//		JLabel idLabel, nomeLabel, loginLabel, senhaLabel;
-//		private JTextField idField, nomeField, loginField, senhaField;
-//		private JButton salvarButton, cancelarButton;
-//		
-//		ButtonHandlerTelaCadastro handler;
-//
-//		public TelaCadastroCantor() {
-//		super("CANTOR");
-//		
-//		setLayout(new FlowLayout());
-//
-//				handler=new ButtonHandlerTelaCadastro(this);
-//
-//				nomeLabel=new JLabel("Nome:");
-//				add(nomeLabel);
-//
-//				nomeField=new JTextField(20);
-//				add(nomeField);
-//
-//				idLabel=new JLabel("ID");
-//				add(idLabel);
-//
-//				idField=new JTextField(20);
-//				add(idField);
-//
-//				loginLabel=new JLabel("Login: ");
-//				add(loginLabel);
-//
-//				loginField=new JTextField(20);
-//				add(loginField);
-//
-//				senhaLabel=new JLabel("Senha: ");
-//				add(senhaLabel);
-//
-//				senhaField=new JTextField(20);
-//				add(senhaField);
-//
-//				salvarButton=new JButton("Salvar");
-//				add(salvarButton);
-//
-//				cancelarButton=new JButton("Cancelar");
-//				add(cancelarButton);
-//
-//				salvarButton.addActionListener(handler);
-//				cancelarButton.addActionListener(handler);
-//
-//				setSize(300, 200);
-//				setLocationRelativeTo(null);
-//				setVisible(true);
-//			}
-//
-//			public JButton getSalvarButton() {
-//				return salvarButton;
-//			}
-//
-//			public JButton getCancelarButton() {
-//				return cancelarButton;
-//			}
-//
-//			public JTextField getIdField() {
-//				return idField;
-//			}
-//
-//			public JTextField getNomeField() {
-//				return nomeField;
-//			}
-//
-//			public JTextField getLoginField() {
-//				return loginField;
-//			}
-//
-//			public JTextField getSenhaField() {
-//				return senhaField;
-//			}
-//		}
-//	}
-//}
+
+import java.awt.FlowLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JTextField;
+
+public class TelaCadastro extends JFrame implements ActionListener{
+
+	private JLabel loginLabel, senhaLabel;
+	private JTextField loginField, senhaField;
+	private JButton addButton;
+	
+	public TelaCadastro(){
+		super("Cadastro");
+		
+		loginLabel = new JLabel("Login: ");
+		senhaLabel = new JLabel("Senha: ");
+		
+		loginField = new JTextField(10);
+		senhaField = new JTextField(10);
+		
+		addButton = new JButton("Add");
+		
+		addButton.addActionListener(this);
+		
+		add(loginLabel);
+		add(loginField);
+		add(senhaLabel);
+		add(senhaField);
+		add(addButton);		
+		
+		setSize(200,200);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setLayout(new FlowLayout());
+		setLocationRelativeTo(null);
+		setResizable(false);
+		setVisible(true);
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		if((e.getSource() == addButton) && (verificarCadastrop() == false)){
+			App.usuarios.add(new Usuario(loginField.getText(), senhaField.getText()));
+			
+			JOptionPane.showMessageDialog(null, "Usuario Cadastrado com sucesso!");
+		}else{
+			JOptionPane.showMessageDialog(null, "Usuario Já cadastrado!");
+		}
+	}
+	
+	public boolean verificarCadastrop(){
+		for(Usuario usuario: App.usuarios){
+			if(loginField.getText().equalsIgnoreCase(App.usuarios.get(0).getLogin())){
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	public JLabel getLoginLabel() {
+		return loginLabel;
+	}
+
+	public void setLoginLabel(JLabel loginLabel) {
+		this.loginLabel = loginLabel;
+	}
+
+	public JLabel getSenhaLabel() {
+		return senhaLabel;
+	}
+
+	public void setSenhaLabel(JLabel senhaLabel) {
+		this.senhaLabel = senhaLabel;
+	}
+
+	public JTextField getLoginField() {
+		return loginField;
+	}
+
+	public void setLoginField(JTextField loginField) {
+		this.loginField = loginField;
+	}
+
+	public JTextField getSenhaField() {
+		return senhaField;
+	}
+
+	public void setSenhaField(JTextField senhaField) {
+		this.senhaField = senhaField;
+	}
+
+	public JButton getAddButton() {
+		return addButton;
+	}
+
+	public void setAddButton(JButton addButton) {
+		this.addButton = addButton;
+	}
+}
