@@ -2,63 +2,66 @@
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
-public class TelaCadastro extends JFrame implements ActionListener{
+public class Login extends JFrame implements ActionListener{
 
 	private JLabel loginLabel, senhaLabel;
-	private JTextField loginField, senhaField;
-	private JButton addButton;
+	private JTextField loginField;
+	private JPasswordField senhaField;
+	private JButton loginButton;
 	
-	public TelaCadastro(){
-		super("Cadastro");
+	public Login(){
+		super("Login");
 		
 		loginLabel = new JLabel("Login: ");
 		senhaLabel = new JLabel("Senha: ");
 		
 		loginField = new JTextField(10);
-		senhaField = new JTextField(10);
+		senhaField = new JPasswordField(10);
 		
-		addButton = new JButton("Add");
+		loginButton = new JButton("Login");
 		
-		addButton.addActionListener(this);
+		loginButton.addActionListener(this);
 		
 		add(loginLabel);
 		add(loginField);
 		add(senhaLabel);
 		add(senhaField);
-		add(addButton);		
+		add(loginButton);		
 		
-		setSize(200,200);
+		setSize(800,600);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setLayout(new FlowLayout());
-		setLocationRelativeTo(null);
+		//setLocationRelativeTo(null);
+		setLocation(112, 0);
 		setResizable(false);
 		setVisible(true);
 	}
-
+	
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		if((e.getSource() == addButton) && (verificarCadastrop() == false)){
-			App.usuarios.add(new Usuario(loginField.getText(), senhaField.getText()));
-			
-			JOptionPane.showMessageDialog(null, "Usuario Cadastrado com sucesso!");
-		}else{
-			JOptionPane.showMessageDialog(null, "Usuario Já cadastrado!");
-		}
-	}
-	
-	public boolean verificarCadastrop(){
-		for(Usuario usuario: App.usuarios){
-			if(loginField.getText().equalsIgnoreCase(App.usuarios.get(0).getLogin())){
-				return true;
+		boolean encontrouUsuario = false;
+		if(e.getSource() == loginButton) {	
+			//for(Usuario usuario: App.usuario){
+			for(int i = 0; i < App.usuario.size(); i++){	
+				if(loginField.getText().equalsIgnoreCase(App.usuario.get(i).getLogin())){
+					if(senhaField.getText().equalsIgnoreCase(App.usuario.get(i).getSenha())){
+						encontrouUsuario = true;
+						setVisible(false);
+					}
+				}
 			}
-		}
-		return false;
+			if(encontrouUsuario == false){
+				JOptionPane.showMessageDialog(null, "Usuário ou senha incorretos.");
+			}
+		}		
 	}
 	
 	public JLabel getLoginLabel() {
@@ -90,14 +93,14 @@ public class TelaCadastro extends JFrame implements ActionListener{
 	}
 
 	public void setSenhaField(JTextField senhaField) {
-		this.senhaField = senhaField;
+		this.senhaField = (JPasswordField) senhaField;
 	}
 
 	public JButton getAddButton() {
-		return addButton;
+		return loginButton;
 	}
 
 	public void setAddButton(JButton addButton) {
-		this.addButton = addButton;
+		this.loginButton = addButton;
 	}
 }
