@@ -78,11 +78,12 @@ public class FrameCliente extends JFrame implements ActionListener {
         buttonCadastrar.setBounds(170, 250, 110, 30);
         add(buttonCadastrar);
         
-        buttonRemover = new JButton();
+       /* buttonRemover = new JButton();
         buttonRemover.setText("Remover");
         buttonRemover.addActionListener(this);
         buttonRemover.setBounds(280, 250, 110, 30);
         add(buttonRemover);
+        */
         
         buttonListar = new JButton();
         buttonListar.setText("Listar");
@@ -125,7 +126,7 @@ public class FrameCliente extends JFrame implements ActionListener {
 				JOptionPane.showMessageDialog(null, "Erro no Código (00).\nInforme apenas números.");
 			}
 			
-        } else if (e.getSource() == buttonRemover) {
+        } /*else if (e.getSource() == buttonRemover) {
         	String clientes = "";
         	for (int i = 0; i < Cliente.listaClientes.size(); i++) {
             	clientes = clientes + Cliente.listaClientes.get(i).getCod() + " - " + Cliente.listaClientes.get(i).getNome() + " - " + Cliente.listaClientes.get(i).getCpf() + " - " + Cliente.listaClientes.get(i).getEndereco() + "\n";
@@ -151,7 +152,7 @@ public class FrameCliente extends JFrame implements ActionListener {
         	
         	textAreaLista.setText("");        	
             
-        } else if (e.getSource() == buttonListar) {
+        } */else if (e.getSource() == buttonListar) {
             String clientes = "";
         	for (int i = 0; i < Cliente.listaClientes.size(); i++) {
         		clientes = clientes + Cliente.listaClientes.get(i).getCod() + " - " + Cliente.listaClientes.get(i).getNome() + " - " + Cliente.listaClientes.get(i).getCpf() + " - " + Cliente.listaClientes.get(i).getEndereco() + "\n";
