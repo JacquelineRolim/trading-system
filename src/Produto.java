@@ -4,11 +4,11 @@ public class Produto {
 	private String descricao;
 	private int cod;
 	private float preco;
-	private float quant;
+	private int quant;
 	
 	static ArrayList<Produto> listaProdutos = new ArrayList<>();
 	
-	public Produto(int cod, String descricao, float preco, float quant) {
+	public Produto(int cod, String descricao, float preco, int quant) {
 		this.cod = cod;
 		this.descricao = descricao;
 		this.preco = preco;
@@ -39,19 +39,15 @@ public class Produto {
 		this.preco = preco;
 	}
 
-	public float getQuant() {
+	public int getQuant() {
 		return quant;
 	}
 
-	public void setQuant(float quant) {
+	public void setQuant(int quant) {
 		this.quant = quant;
 	}
 	
-	public void cadastrarProduto(Produto produto){
-		listaProdutos.add(produto);
-	}
-	
-	public static void removerProduto(int posicaoProduto) {
-		listaProdutos.remove(posicaoProduto);
+	public void cadastrarProduto(Produto produtoNovo){
+		new EscreverArquivoProdutos(produtoNovo);
 	}
 }

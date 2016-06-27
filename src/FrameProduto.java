@@ -1,6 +1,7 @@
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -12,7 +13,7 @@ public class FrameProduto extends JFrame implements ActionListener {
 	
 	private JButton buttonCadastrar;
     private JButton buttonListar;
-    private JButton buttonRemover;
+    //private JButton buttonRemover;
     private JButton buttonVoltar;
     private JLabel labelTitulo;
     private JLabel labelCodigo;
@@ -78,11 +79,11 @@ public class FrameProduto extends JFrame implements ActionListener {
         buttonCadastrar.setBounds(170, 250, 110, 30);
         add(buttonCadastrar);
         
-        buttonRemover = new JButton();
+        /*buttonRemover = new JButton();
         buttonRemover.setText("Remover");
         buttonRemover.addActionListener(this);
         buttonRemover.setBounds(280, 250, 110, 30);
-        add(buttonRemover);
+        add(buttonRemover);*/
         
         buttonListar = new JButton();
         buttonListar.setText("Listar");
@@ -126,7 +127,9 @@ public class FrameProduto extends JFrame implements ActionListener {
 				JOptionPane.showMessageDialog(null, "Erro no Código (00), Preço (0.00) ou Quantidade (00).\nInforme apenas números no código e na quantidade, e no preço coloca ponto (.)");
 			}
 			
-        } else if (e.getSource() == buttonRemover) {
+        }/* else if (e.getSource() == buttonRemover) {
+        	new LerArquivoProdutos();
+        	
         	String produtos = "";
         	for (int i = 0; i < Produto.listaProdutos.size(); i++) {
             	produtos = produtos + Produto.listaProdutos.get(i).getCod() + " - " + Produto.listaProdutos.get(i).getDescricao() + " - " + Produto.listaProdutos.get(i).getQuant() + " - " + Produto.listaProdutos.get(i).getPreco() + "\n";
@@ -152,8 +155,10 @@ public class FrameProduto extends JFrame implements ActionListener {
         	
         	textAreaLista.setText("");        	
             
-        } else if (e.getSource() == buttonListar) {
-            String produtos = "";
+        }*/ else if (e.getSource() == buttonListar) {
+        	new LerArquivoProduto();
+        	
+        	String produtos = "";
         	for (int i = 0; i < Produto.listaProdutos.size(); i++) {
             	produtos = produtos + Produto.listaProdutos.get(i).getCod() + " - " + Produto.listaProdutos.get(i).getDescricao() + " - " + Produto.listaProdutos.get(i).getQuant() + " - " + Produto.listaProdutos.get(i).getPreco() + "\n";
             }
