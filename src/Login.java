@@ -39,7 +39,6 @@ public class Login extends JFrame implements ActionListener{
 		setSize(800,600);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setLayout(new FlowLayout());
-		//setLocationRelativeTo(null);
 		setLocation(112, 0);
 		setResizable(false);
 		setVisible(true);
@@ -49,7 +48,6 @@ public class Login extends JFrame implements ActionListener{
 	public void actionPerformed(ActionEvent e) {
 		boolean encontrouUsuario = false;
 		if(e.getSource() == loginButton) {	
-			//for(Usuario usuario: App.usuario){
 			for(int i = 0; i < App.usuario.size(); i++){	
 				if(loginField.getText().equalsIgnoreCase(App.usuario.get(i).getLogin())){
 					if(senhaField.getText().equalsIgnoreCase(App.usuario.get(i).getSenha())){

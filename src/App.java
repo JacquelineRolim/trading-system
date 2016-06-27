@@ -18,8 +18,6 @@ public class App extends JFrame implements ActionListener {
     private JButton buttonSair;
 	
 	public App() {      
-		
-		
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setSize(800, 600);
         setLocation(112, 0);
@@ -63,7 +61,6 @@ public class App extends JFrame implements ActionListener {
         imagem = new JLabel();
         imagem.setSize(400, 400);
         imagem.setLocation(50, 150);
-        //imagem.setIcon(new javax.swing.ImageIcon("C:/Users/Usuario/Dropbox/UFRPE-UAST/UFRPE-UAST 5º PERIODO/PDS/trading-system-sistemaComercial.jpg"));
         imagem.setIcon(new javax.swing.ImageIcon("C:/Users/Usuario/Dropbox/UFRPE-UAST/UFRPE-UAST 5º PERIODO/PDS/trading-system-/sistemaComercial.jpg"));
         
         imagem.setVisible(true);
