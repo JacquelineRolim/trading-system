@@ -10,7 +10,6 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.Border;
 
-
 public class App extends JFrame implements ActionListener {
 	
 	static ArrayList<Usuario> usuario;
@@ -80,7 +79,6 @@ public class App extends JFrame implements ActionListener {
         usuario = new ArrayList<>();
         
         new LerArquivoUsuario();
-        
     	new Login();	
 	}
 	

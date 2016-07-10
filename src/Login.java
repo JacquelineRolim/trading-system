@@ -1,9 +1,7 @@
-
 import java.awt.Color;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -27,8 +25,7 @@ public class Login extends JFrame implements ActionListener{
 		loginField = new JTextField(10);
 		senhaField = new JPasswordField(10);
 		
-		loginButton = new JButton("Login");
-		
+		loginButton = new JButton("Login");		
 		loginButton.addActionListener(this);
 		
 		add(loginLabel);

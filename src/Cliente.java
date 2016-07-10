@@ -1,4 +1,3 @@
-
 import java.util.ArrayList;
 
 public class Cliente {
@@ -41,7 +40,6 @@ public class Cliente {
 		this.cod = cod;
 	}
 	
-	//METODOS
 	public void cadastrarCliente(Cliente cliente){
 		listaClientes.add(cliente);
 	}

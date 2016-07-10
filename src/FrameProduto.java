@@ -105,7 +105,6 @@ public class FrameProduto extends JFrame implements ActionListener {
         add(textAreaLista);
 	}
 	
-	
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource() == buttonCadastrar) {
