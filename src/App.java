@@ -1,4 +1,5 @@
 import java.awt.Color;
+import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
@@ -6,6 +7,8 @@ import java.util.ArrayList;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.border.Border;
 
 
 public class App extends JFrame implements ActionListener {
@@ -29,7 +32,6 @@ public class App extends JFrame implements ActionListener {
         labelTitulo.setFont(new java.awt.Font("Times New Roman", 0, 18));
         labelTitulo.setText("Projeto PDS");
         labelTitulo.setBounds(300, 10, 200, 30);
-        labelTitulo.setColor(Color.blue);
         add(labelTitulo);
         
         buttonProduto = new JButton();
@@ -61,13 +63,18 @@ public class App extends JFrame implements ActionListener {
         buttonSair.addActionListener(this);
         setVisible(true);
         
-        imagem = new JLabel();
-        imagem.setSize(400, 400);
-        imagem.setLocation(50, 150);
-        imagem.setIcon(new javax.swing.ImageIcon("C:/Users/Usuario/Dropbox/UFRPE-UAST/UFRPE-UAST 5º PERIODO/PDS/trading-system-/sistemaComercial.jpg"));
+        JPanel imagem2 = new JPanel();
+        imagem2.setSize(200, 200);
+        imagem2.setLocation(50, 200);
+        imagem2.setVisible(true);
+        add(imagem2);
         
+        imagem = new JLabel();
+        imagem.setSize(200, 200);
+        imagem.setLocation(50, 200);
+        imagem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/images.jpg")));
         imagem.setVisible(true);
-        add(imagem);
+        imagem2.add(imagem);
         
         usuario = new ArrayList<>();
         
