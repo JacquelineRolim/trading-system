@@ -1,4 +1,5 @@
 
+import java.awt.Color;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -42,6 +43,7 @@ public class Login extends JFrame implements ActionListener{
 		setLocation(112, 0);
 		setResizable(false);
 		setVisible(true);
+		getContentPane().setBackground(new Color(207,221,237));
 	}
 	
 	@Override

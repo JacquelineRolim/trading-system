@@ -1,3 +1,4 @@
+import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -30,6 +31,7 @@ public class FrameProduto extends JFrame implements ActionListener {
 		setSize(800, 600);
         setLayout(null);
         setVisible(true);
+        getContentPane().setBackground(new Color(207,221,237));
 
         labelTitulo = new JLabel();
         labelTitulo.setFont(new Font("Times New Roman", 0, 14));

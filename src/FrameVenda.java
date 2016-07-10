@@ -1,8 +1,10 @@
 
+import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -35,9 +37,10 @@ public class FrameVenda extends JFrame implements ActionListener {
 		setSize(800, 600);
         setLayout(null);
         setVisible(true);
+        getContentPane().setBackground(new Color(207,221,237));
         
         labelTitulo = new JLabel();
-        labelTitulo.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        labelTitulo.setFont(new java.awt.Font("Arial", 0, 16));
         labelTitulo.setText("VENDA");
         labelTitulo.setBounds(350, 20, 70, 14);
         add(labelTitulo);

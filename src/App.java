@@ -27,6 +27,7 @@ public class App extends JFrame implements ActionListener {
         setSize(800, 600);
         setLocation(112, 0);
         setLayout(null);
+        getContentPane().setBackground(new Color(207,221,237));
         
         labelTitulo = new JLabel();
         labelTitulo.setFont(new java.awt.Font("Times New Roman", 0, 18));
